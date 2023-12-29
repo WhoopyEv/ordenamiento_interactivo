@@ -1,5 +1,5 @@
 import flet as ft
-
+import random
 
 def main(page: ft.Page):
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -10,7 +10,7 @@ def main(page: ft.Page):
         for _ in range(number):
             container_list.append(
                 ft.Container(
-                    content=ft.Text(),
+                    content=ft.Text(value=str(random.randint(1, 100))),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -20,7 +20,7 @@ def main(page: ft.Page):
             )
         return container_list
 
-    row = ft.Row(controls=create_container(8), alignment=ft.MainAxisAlignment.CENTER)
+    row = ft.Row(controls=create_container(10), alignment=ft.MainAxisAlignment.CENTER)
     page.add(row)
 
 
